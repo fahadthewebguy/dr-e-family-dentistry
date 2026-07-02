@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf9f7;
+  --foreground: #2a2119;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-figtree);
+
+  /* Primary — plum, extracted from the practice logo wordmark (#684858) */
+  --color-primary-50: #faf4f8;
+  --color-primary-100: #f4e6ee;
+  --color-primary-200: #e5cdda;
+  --color-primary-300: #cfaabf;
+  --color-primary-400: #b47e9c;
+  --color-primary-500: #955b7b;
+  --color-primary-600: #794e66;
+  --color-primary-700: #684858;
+  --color-primary-800: #523244;
+  --color-primary-900: #3d2432;
+  --color-primary-950: #24141d;
+
+  /* Accent — warm gold, extracted from the logo's crackle veining (#d8b860) */
+  --color-accent-50: #fdfaf2;
+  --color-accent-100: #f9f3e1;
+  --color-accent-200: #f2e5c0;
+  --color-accent-300: #e6d194;
+  --color-accent-400: #d8b860;
+  --color-accent-500: #c9a436;
+  --color-accent-600: #a7892f;
+  --color-accent-700: #866e28;
+  --color-accent-800: #655420;
+  --color-accent-900: #493d18;
+  --color-accent-950: #2a230f;
+
+  /* Neutrals — warm off-white/gray, never pure white or cold blue-gray */
+  --color-neutral-50: #faf9f7;
+  --color-neutral-100: #f3f1ed;
+  --color-neutral-200: #e7e2da;
+  --color-neutral-300: #d6cfc3;
+  --color-neutral-400: #b3a99a;
+  --color-neutral-500: #8c8171;
+  --color-neutral-600: #6b6154;
+  --color-neutral-700: #4f473c;
+  --color-neutral-800: #362f27;
+  --color-neutral-900: #211c17;
+  --color-neutral-950: #14100d;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 2px;
+  }
+}
