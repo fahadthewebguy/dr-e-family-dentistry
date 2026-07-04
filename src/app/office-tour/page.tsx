@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/AppImage";
 import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {

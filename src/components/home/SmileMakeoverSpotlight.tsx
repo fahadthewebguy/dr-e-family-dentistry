@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/AppImage";
 import Link from "next/link";
 import { smileMakeover } from "@/data/services";
 import { Reveal } from "@/components/motion/Reveal";

@@ -3,6 +3,8 @@ import { site } from "@/data/site";
 import { services, smileMakeover } from "@/data/services";
 import { blogPosts } from "@/data/blog";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",

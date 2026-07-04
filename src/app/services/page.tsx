@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/components/AppImage";
 import Link from "next/link";
 import { services, smileMakeover } from "@/data/services";
 import { site } from "@/data/site";
