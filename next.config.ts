@@ -9,6 +9,10 @@ const basePath = isGithubActions ? `/${repoName}` : "";
 
 const nextConfig: NextConfig = {
   output: "export",
+  // Emit directory-style routes (services/index.html) so GitHub Pages resolves
+  // both /services and /services/ — without this, static export emits
+  // services.html and trailing-slash URLs 404.
+  trailingSlash: true,
   images: { unoptimized: true },
   basePath,
   assetPrefix: isGithubActions ? `/${repoName}/` : "",
