@@ -1,6 +1,7 @@
 import Image from "@/components/AppImage";
 import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 const pairs = [
   { before: "/images/before-after/pair1-before.jpg", after: "/images/before-after/pair1-after.jpg" },
@@ -11,14 +12,11 @@ export function BeforeAfterTeaser() {
   return (
     <section className="bg-neutral-50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent-700">
-            Real Results
-          </p>
-          <h2 className="mt-3 font-serif text-3xl text-primary-950 sm:text-4xl">
-            See the Difference
-          </h2>
-        </Reveal>
+        <SectionHeading
+          eyebrow="Real Results"
+          title="See the Difference"
+          description="A glimpse at the smile transformations possible with Dr. E's cosmetic dentistry."
+        />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {pairs.map((pair, i) => (

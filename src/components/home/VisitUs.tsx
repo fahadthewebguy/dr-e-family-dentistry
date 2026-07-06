@@ -1,19 +1,15 @@
 import Link from "next/link";
 import { site } from "@/data/site";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 export function VisitUs() {
   return (
     <section className="bg-neutral-50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 overflow-hidden rounded-[2.5rem] bg-white shadow-sm ring-1 ring-primary-100 lg:grid-cols-2">
-          <Reveal className="flex flex-col justify-center p-8 sm:p-12">
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent-700">
-              Visit Us
-            </p>
-            <h2 className="mt-3 font-serif text-3xl text-primary-950 sm:text-4xl">
-              We&rsquo;d Love to See You
-            </h2>
+          <div className="flex flex-col justify-center p-8 sm:p-12">
+            <SectionHeading eyebrow="Visit Us" title="We'd Love to See You" align="left" />
             <address className="mt-6 not-italic leading-relaxed text-neutral-700">
               {site.address.line1}
               <br />
@@ -45,7 +41,7 @@ export function VisitUs() {
                 Get Directions &amp; Contact
               </Link>
             </div>
-          </Reveal>
+          </div>
 
           <Reveal delay={0.1} className="min-h-[320px] lg:min-h-full">
             <iframe

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { featuredServices } from "@/data/services";
 import { smileMakeover } from "@/data/services";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 const cards = [...featuredServices, smileMakeover];
 
@@ -10,21 +11,18 @@ export function FeaturedServices() {
   return (
     <section className="bg-neutral-50 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent-700">
-            What We Offer
-          </p>
-          <h2 className="mt-3 font-serif text-3xl text-primary-950 sm:text-4xl">
-            Care Designed Around Your Smile
-          </h2>
-        </Reveal>
+        <SectionHeading
+          eyebrow="What We Offer"
+          title="Care Designed Around Your Smile"
+          description="From routine visits to full smile transformations, every treatment is tailored to you."
+        />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((service, i) => (
-            <Reveal key={service.slug} delay={i * 0.08}>
+            <Reveal key={service.slug} delay={i * 0.08} className="h-full">
               <Link
                 href={`/services/${service.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm shadow-primary-950/5 ring-1 ring-primary-100 transition-shadow hover:shadow-lg hover:shadow-primary-950/10"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm shadow-primary-950/5 ring-1 ring-primary-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary-950/10"
               >
                 <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <Image
@@ -34,15 +32,23 @@ export function FeaturedServices() {
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <span className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-accent-500 transition-transform duration-300 group-hover:scale-x-100" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="font-serif text-xl text-primary-900">{service.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">
                     {service.shortDescription}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-700 group-hover:text-primary-800">
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-700 transition-colors group-hover:text-primary-800">
                     Learn more
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    >
                       <path
                         d="M3.5 8h9M8.5 3.5 13 8l-4.5 4.5"
                         stroke="currentColor"

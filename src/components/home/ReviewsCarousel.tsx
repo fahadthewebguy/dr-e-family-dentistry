@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import { reviews } from "@/data/reviews";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -41,14 +42,11 @@ export function ReviewsCarousel() {
     <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-          <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent-700">
-              Patient Reviews
-            </p>
-            <h2 className="mt-3 font-serif text-3xl text-primary-950 sm:text-4xl">
-              Loved by Ahwatukee Families
-            </h2>
-          </Reveal>
+          <SectionHeading
+            eyebrow="Patient Reviews"
+            title="Loved by Ahwatukee Families"
+            align="left"
+          />
           <Reveal delay={0.1} className="flex gap-3">
             <button
               type="button"

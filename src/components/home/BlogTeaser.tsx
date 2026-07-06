@@ -2,6 +2,7 @@ import Image from "@/components/AppImage";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog";
 import { Reveal } from "@/components/motion/Reveal";
+import { SectionHeading } from "@/components/home/SectionHeading";
 
 const recent = [...blogPosts]
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -11,14 +12,11 @@ export function BlogTeaser() {
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent-700">
-            From the Blog
-          </p>
-          <h2 className="mt-3 font-serif text-3xl text-primary-950 sm:text-4xl">
-            Tips for a Healthier Smile
-          </h2>
-        </Reveal>
+        <SectionHeading
+          eyebrow="From the Blog"
+          title="Tips for a Healthier Smile"
+          description="Practical advice and updates from Dr. E and her team."
+        />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {recent.map((post, i) => (
